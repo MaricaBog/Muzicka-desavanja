@@ -1,0 +1,36 @@
+
+<div class="container" style="margin-top: 5px;">
+    <h2>Your order</h2>
+    <div class="row">
+      <div class="col-12" *ngIf="items.length>0;else noItems">
+        
+          <table class="table table-image" >
+    
+            <tbody *ngFor="let event of items">
+             <tr style="background-color: orange; ">
+                <td><!--{{event.ticketsReserved}} -->  {{event.nazivDog }}</td>              
+                <td>{{event.cena}} din</td> 
+                             
+             </tr>
+              </tbody>
+             
+
+            </table>
+         </div>
+         </div>
+         <div style="background-color: darkolivegreen; color: white;">
+         <p > &nbsp; Number of reserved tickets: {{numberOfAllCarts()}}  </p>
+        <div *ngFor ="let e of items">
+               <p>&nbsp; {{e.nazivDog}}</p>
+               
+
+            </div>
+         </div>
+         <h4 class="text-right"> Total: {{items | ticketsSum  }} DIN</h4>
+         <button class="btn btn-warning float-right" (click)="buy()"  *ngIf="items.length>0">Buy <i class="fa fa-paper-plane-o ml-6"></i></button>
+
+         <ng-template #noItems>
+            <p> &nbsp; &nbsp;&nbsp;&nbsp;No reservations</p>
+           </ng-template>
+</div>   
+

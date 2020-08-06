@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Details</h2>
+    <hr>
+    <div *ngIf="event"> 
+      <h3>{{event.nazivDog}} </h3>
+    <!--  <div class="w-25"  [ngSwitch]="performerName()">
+      
+       <img *ngSwitchCase="Marko Louis" src="../../assets/ml.jpg" class="img-fluid img-thumbnail" >
+       <img *ngSwitchCase="Nick Cave" src="../../assets/nc.jpg" class="img-fluid img-thumbnail" >
+       <img *ngSwitchCase="Negative" src="../../assets/ng.png" class="img-fluid img-thumbnail" >
+        <img *ngSwitchCase="Lovefest" src="../../assets/love.png" class="img-fluid img-thumbnail" >
+        <img *ngSwitchCase="Perpetum Jazzile" src="../../assets/pz.jpg" class="img-fluid img-thumbnail" >
+        <img *ngSwitchCase="Vasil Hadzimanov" src="../../assets/vh.png" class="img-fluid img-thumbnail" >
+        <img *ngSwitchCase="Maktub" src="../../assets/mktb.png" class="img-fluid img-thumbnail" >
+        <img *ngSwitchCase="Ara Malikian" src="../../assets/ra.jpg" class="img-fluid img-thumbnail" >
+        <img *ngSwitchDefault=" " src="../../assets/logo.png" class="img-fluid img-thumbnail" >     
+        </div>--> 
+      <p>{{event.detalji}}</p>
+      <button class="btn btn-primary" (click)="buyTicket()">Reserve</button>
+      <p> Tickets: {{event.ticketsReserved }} </p> 
+      <button type="button" class="btn btn-danger" style="margin-right: 10px;">Delete</button>
+      <button type="button" class="btn btn-success">Update</button>
+    
+    </div>
+    </div>

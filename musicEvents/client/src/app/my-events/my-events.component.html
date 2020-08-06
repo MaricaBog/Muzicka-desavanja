@@ -1,0 +1,80 @@
+<h2 class="text-center">Create event</h2>
+
+<div class="container text-center" >
+    <div clas="card" style="background-color: darkolivegreen; ">
+  
+    <form [formGroup]="createForm" style="color: white" (ngSubmit)="submitForm(createForm.value)">
+    <label for="nazivDog">Name of event</label>
+    <br>
+    <input type="text" name="nazivDog" id="nazivDog" class="form-contol" formControlName="nazivDog">
+    <br>
+   <p class="error" *ngIf="nazivDog().errors?.required"> Name required</p>
+    <p class = "error" *ngIf="nazivDog().errors?.pattern">Can contain only letters,numbers and space</p>
+ 
+    <label for="cena">Price</label>
+    <br>
+    <input type="number" name="cena" id="cena" class="form-contol" formControlName="cena">
+    <br>
+    <p class="error" *ngIf="cena().errors?.required"> Price required</p>
+    <p class = "error" *ngIf="cena().errors?.number">Can contain only numbers</p>
+  
+    <label for="kapacitet">Capasity</label>
+    <br>
+    <input type="number" name="kapacitet" id="kapacitet" class="form-contol" formControlName="kapacitet">
+    <br>
+    <p class="error" *ngIf="kapacitet().errors?.required"> Capasity required</p>
+    <p class = "error" *ngIf="kapacitet().errors?.number"> Can contain only numbers </p>
+
+
+    <label for="datum">Date</label>
+    <br>
+    <input type="date" name="datum" id="datum" class="form-contol" formControlName="datum">
+    <p class="error" *ngIf="datum().errors?.required"> Date required</p>
+    <p class="error" *ngIf="datum().errors?.date"> Date required</p>
+
+    <br>
+  
+    <label for="vrstaMuzike">Type of music</label>
+    <br>
+    <input type="text" name="vrstaMuzike" id="vrstaMuzike" class="form-contol" formControlName="vrstaMuzike">
+    <br>
+    <p class="error" *ngIf="vrstaMuzike().errors?.required"> Type of music required</p>
+    <p class = "error" *ngIf="vrstaMuzike().errors?.pattern">jazz/rock/techno/ethno/rave/classical</p>
+   
+    <label for="vrstaDogadjaja">Type of event</label>
+    <br>
+    <input type="text" name="vrstaDogadjaja" id="vrstaDogadjaja" class="form-contol" formControlName="vrstaDogadjaja">
+    <br>
+    <p class="error" *ngIf="vrstaDogadjaja().errors?.required"> Type of event required</p>
+    <p class = "error" *ngIf="vrstaDogadjaja().errors?.pattern">concert/gig/festival</p>
+    
+
+    <label for="slobodanUlaz">Free entrance</label>
+    <br>
+    <input type="text" name="slobodanUlaz" id="slobodanUlaz" class="form-contol" formControlName="slobodanUlaz">
+    <br>
+    <p class="error" *ngIf="slobodanUlaz().errors?.required"> Type of event required</p>
+    <p class = "error" *ngIf="slobodanUlaz().errors?.pattern">yes/no</p>
+
+
+    <label for="adresa">Address</label>
+    <br>
+    <input type="text" name="adresa" id="adresa" class="form-contol" formControlName="adresa">
+    <br>
+    <p class="error" *ngIf="adresa().errors?.required"> Address required</p>
+    <p class = "error" *ngIf="adresa().errors?.pattern">Can contain only letters,numbers and space</p>
+    <br>
+
+    <label for="detalji">Details</label>
+    <br>
+    <textarea name="detalji" id="detalji" class="form-contol" formControlName="detalji"> </textarea>
+    <br>
+    <p class = "error" *ngIf="detalji().errors?.pattern">Can contain only letters,numbers and space</p>
+
+    <button class="btn btn-secondary btn-sm " type="submit" [disabled]="!createForm.valid"><strong>Create</strong> <i class="fa fa-paper-plane-o ml-6"></i></button>
+
+    <br>
+    <br>
+</form>
+    </div>
+</div>
